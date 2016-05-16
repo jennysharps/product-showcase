@@ -6,7 +6,7 @@
 3. `npm start`
 4. Go to `http://localhost:8080/` in your browser of choice
 
-Note: For cross origin accessibility please disable cross origin restrictions in your browser. Safari: Develop/Disable Cross Origin Restrictions, Chrome: install this plugin https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)
+Note: For cross origin accessibility please disable cross origin restrictions in your browser. Safari: Develop/Disable Cross Origin Restrictions, Chrome: install this plugin https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 
 ## Explanation
 In my first attempt at building with React, after reading up as much as possible on best practices, I decided to break the solution down into the following components given the functional requirements:
