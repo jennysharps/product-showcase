@@ -31,6 +31,9 @@ var ProductShowcase = React.createClass({
                     cache: false,
                     success: function(data) {
                         stateData[api.name] = data.data || [];
+                        if(stateData[api.name].title !== undefined) {
+                            stateData[api.name].titleLower = stateData[api.name].title.toLowerCase();
+                        }
                         component.setState(stateData);
                     },
                     error: function(xhr, status, err) {
@@ -66,8 +69,11 @@ var ProductShowcase = React.createClass({
             }.bind(this));
         }
 
+        var nameFilter = this.state.nameFilter.toLowerCase();
+
         displayedProducts = displayedProducts.filter(function(product) {
-            return product.title.toLowerCase().indexOf(this.state.nameFilter.toLowerCase()) !== -1;
+            var productName = product.titleLower || product.title.toLowerCase();
+            return productName.indexOf(nameFilter) !== -1;
         }.bind(this));
 
         return (
