@@ -37,9 +37,15 @@ class ProductShowcase extends React.Component {
                     url: api.url,
                     dataType: 'json',
                     cache: false,
-                    if(stateData[api.name].title !== undefined) {
-+                       stateData[api.name].titleLower = stateData[api.name].title.toLowerCase();
-+                   }
+                    success: function(data) {
+                        stateData[api.name] = data.data || [];
+
+                        if(stateData[api.name].title !== undefined) {
+                            stateData[api.name].titleLower = stateData[api.name].title.toLowerCase();
+                        }
+
+                        component.setState(stateData);
+                    },
                     error: function(xhr, status, err) {
                         console.error(api.url, status, err.toString());
                     }
