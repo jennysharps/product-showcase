@@ -1,0 +1,50 @@
+body {
+    background: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 30px;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.categoryList ul {
+    margin: 1em -10px;
+}
+
+.categoryList li {
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.categoryList .active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.productList .title {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: ;
+}
+
+.productList .description {
+    display: none;
+    font-size: 0.75rem;
+    margin-top: 0;
+}
+
+.productList .active .title {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.productList .active .description {
+    display: block;
+}
