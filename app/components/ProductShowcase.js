@@ -37,10 +37,9 @@ class ProductShowcase extends React.Component {
                     url: api.url,
                     dataType: 'json',
                     cache: false,
-                    success: function(data) {
-                        stateData[api.name] = data.data || [];
-                        component.setState(stateData);
-                    },
+                    if(stateData[api.name].title !== undefined) {
++                       stateData[api.name].titleLower = stateData[api.name].title.toLowerCase();
++                   }
                     error: function(xhr, status, err) {
                         console.error(api.url, status, err.toString());
                     }
@@ -73,8 +72,11 @@ class ProductShowcase extends React.Component {
             }.bind(this));
         }
 
+        var nameFilter = this.state.nameFilter.toLowerCase();
+
         displayedProducts = displayedProducts.filter(function(product) {
-            return product.title.toLowerCase().indexOf(this.state.nameFilter.toLowerCase()) !== -1;
+            var productName = product.titleLower || product.title.toLowerCase();
+            return productName.indexOf(nameFilter) !== -1;
         }.bind(this));
 
         return (
