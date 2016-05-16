@@ -183,6 +183,6 @@ var Product = React.createClass({
 });
 
 ReactDOM.render(
-  <ProductShowcase />,
-  document.getElementById('content')
+    <ProductShowcase />,
+    document.getElementById('content')
 );
